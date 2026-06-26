@@ -7,6 +7,7 @@ import { useAuth }            from '../contextos/AuthContexto';
 import { LayoutPrincipal }    from '../components/layout/LayoutPrincipal';
 import { PaginaLogin }        from '../modulos/autenticacion/PaginaLogin';
 import { PaginaDashboard }    from '../modulos/dashboard/PaginaDashboard';
+import { PaginaIndicadores }  from '../modulos/indicadores/PaginaIndicadores';
 import { PaginaNoEncontrada } from '../modulos/NoEncontrada';
 
 /** Ruta protegida: redirige a /login si no está autenticado */
@@ -82,10 +83,10 @@ export function Rutas() {
             <LayoutPrincipal>
               <Routes>
                 <Route path="dashboard"            element={<PaginaDashboard />} />
+                <Route path="indicadores"          element={<PaginaIndicadores />} />
                 <Route path="calendario"           element={<ModuloProximamente nombre="Calendario Tributario" />} />
                 <Route path="retenciones/tabla"    element={<ModuloProximamente nombre="Tabla de Retenciones" />} />
                 <Route path="retenciones/calculadora" element={<ModuloProximamente nombre="Calculadora de Retenciones" />} />
-                <Route path="indicadores"          element={<ModuloProximamente nombre="Indicadores Económicos" />} />
                 <Route path="conciliacion"         element={<ModuloProximamente nombre="Conciliación DIAN vs Contabilidad" />} />
                 <Route path="xml/facturas"         element={<ModuloProximamente nombre="Lector XML Facturas" />} />
                 <Route path="xml/nomina"           element={<ModuloProximamente nombre="Lector XML Nómina" />} />

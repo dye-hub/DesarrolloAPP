@@ -39,7 +39,7 @@ export const MODULOS_PLATAFORMA: ModuloSidebar[] = [
     icono:       'TrendingUp',
     ruta:        '/indicadores',
     descripcion: 'UVT, TRM, DTF, IBR, IPC y más en tiempo real',
-    disponible:  false,
+    disponible:  true,
     esNuevo:     true,
     categoria:   'fiscal',
   },

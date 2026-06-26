@@ -13,6 +13,7 @@ dotenv.config();
 
 import { probarConexion } from './src/config/bd';
 import rutasAuth from './src/modulos/autenticacion/rutas';
+import rutasIndicadores from './src/modulos/indicadores/rutas';
 import { middlewareAuditoria } from './src/middleware/auditoria';
 
 const app = express();
@@ -72,6 +73,7 @@ app.get('/api/salud', (req: Request, res: Response) => {
 });
 
 app.use('/api/auth', rutasAuth);
+app.use('/api/indicadores', rutasIndicadores);
 
 // ── Ruta no encontrada ──────────────────────────────────────────────────────
 app.use((req: Request, res: Response) => {
