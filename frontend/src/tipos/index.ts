@@ -1,4 +1,4 @@
-// Tipos globales de TypeScript para la plataforma ContaFlow CO
+// Tipos globales de TypeScript para la plataforma DesarrolloAPP
 
 // ── Roles del sistema ──────────────────────────────────────────────────────
 export type RolUsuario = 'administrador' | 'contador' | 'auxiliar' | 'cliente';

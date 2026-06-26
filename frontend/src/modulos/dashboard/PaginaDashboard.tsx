@@ -6,7 +6,7 @@
 import {
   CalendarDays, Table2, Calculator, TrendingUp, GitCompareArrows,
   FileCode2, Users, BookOpen, MailCheck, Wand2, FileOutput,
-  Search, ScanText, BadgeCheck, LayoutKanban, Sparkles,
+  Search, ScanText, BadgeCheck, Kanban, Sparkles,
   ShieldCheck, Shield, Video, BookMarked, ExternalLink,
   ArrowRight, Zap, Lock,
 } from 'lucide-react';
@@ -18,7 +18,7 @@ import type { ModuloSidebar } from '../../tipos';
 const ICONOS: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
   CalendarDays, Table2, Calculator, TrendingUp, GitCompareArrows,
   FileCode2, Users, BookOpen, MailCheck, Wand2, FileOutput,
-  Search, ScanText, BadgeCheck, LayoutKanban, Sparkles,
+  Search, ScanText, BadgeCheck, Kanban, Sparkles,
   ShieldCheck, Shield, Video, BookMarked, ExternalLink,
 };
 

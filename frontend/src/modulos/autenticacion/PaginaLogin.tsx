@@ -262,7 +262,7 @@ export function PaginaLogin() {
             }}
           >
             <p className="text-xs" style={{ color: 'var(--color-primario)' }}>
-              <strong>Acceso demo:</strong> admin@contaflow.co / Admin2024!
+              <strong>Acceso demo:</strong> admin@desarrolloapp.co / Admin2024!
             </p>
           </div>
 

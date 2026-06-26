@@ -21,9 +21,9 @@ interface ContextoAuthValor extends EstadoAuth {
 const ContextoAuth = createContext<ContextoAuthValor | null>(null);
 
 const API_URL    = import.meta.env.VITE_API_URL || 'http://localhost:5000';
-const LLAVE_TOKEN   = 'contaflow_token';
-const LLAVE_USUARIO = 'contaflow_usuario';
-const LLAVE_EMPRESA = 'contaflow_empresa';
+const LLAVE_TOKEN   = 'desarrolloapp_token';
+const LLAVE_USUARIO = 'desarrolloapp_usuario';
+const LLAVE_EMPRESA = 'desarrolloapp_empresa';
 
 export function ProveedorAuth({ children }: { children: ReactNode }) {
   const [estado, setEstado] = useState<EstadoAuth>({
@@ -73,7 +73,7 @@ export function ProveedorAuth({ children }: { children: ReactNode }) {
     const { usuario, tokenAcceso, tokenRefresco }: RespuestaLogin = json.datos;
 
     localStorage.setItem(LLAVE_TOKEN,   tokenAcceso);
-    localStorage.setItem('contaflow_refresh', tokenRefresco);
+    localStorage.setItem('desarrolloapp_refresh', tokenRefresco);
     localStorage.setItem(LLAVE_USUARIO, JSON.stringify(usuario));
 
     setEstado({
@@ -89,7 +89,7 @@ export function ProveedorAuth({ children }: { children: ReactNode }) {
     localStorage.removeItem(LLAVE_TOKEN);
     localStorage.removeItem(LLAVE_USUARIO);
     localStorage.removeItem(LLAVE_EMPRESA);
-    localStorage.removeItem('contaflow_refresh');
+    localStorage.removeItem('desarrolloapp_refresh');
     setEstado({
       usuario: null, empresa: null, token: null,
       cargando: false, autenticado: false,

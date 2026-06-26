@@ -1,5 +1,5 @@
 /**
- * Definición de todos los módulos de la plataforma ContaFlow CO
+ * Definición de todos los módulos de la plataforma DesarrolloAPP
  * Usados por el Sidebar y el Dashboard de inicio
  */
 import type { ModuloSidebar } from '../tipos';
@@ -145,7 +145,7 @@ export const MODULOS_PLATAFORMA: ModuloSidebar[] = [
   {
     id:          'tareas',
     etiqueta:    'Gestión de Tareas',
-    icono:       'LayoutKanban',
+    icono:       'Kanban',
     ruta:        '/tareas',
     descripcion: 'Kanban por cliente — prioridad, subtareas, adjuntos',
     disponible:  false,

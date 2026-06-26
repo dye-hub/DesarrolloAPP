@@ -12,7 +12,7 @@ interface ContextoTemaValor {
 }
 
 const ContextoTema = createContext<ContextoTemaValor | null>(null);
-const LLAVE_TEMA = 'contaflow_tema';
+const LLAVE_TEMA = 'desarrolloapp_tema';
 
 export function ProveedorTema({ children }: { children: ReactNode }) {
   const [tema, setTema] = useState<Tema>(() => {

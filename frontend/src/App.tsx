@@ -1,5 +1,5 @@
 /**
- * Componente raíz de ContaFlow CO
+ * Componente raíz de DesarrolloAPP
  * Conecta todos los proveedores de contexto con el router
  */
 import { ProveedorAuth } from './contextos/AuthContexto';
