@@ -187,11 +187,22 @@ CREATE OR REPLACE TRIGGER trg_obligaciones_actualizado
 -- Contraseña: Admin2024! (cambiar inmediatamente en producción)
 -- Hash bcrypt costo 12
 -- ============================================================
-INSERT INTO usuarios (nombre, apellido, correo, contrasena_hash, rol)
-VALUES (
-  'Administrador',
-  'Sistema',
-  'admin@contaflow.co',
-  '$2a$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQyCgJGmZ9.b7PQ5YQ8gGvF.i',
-  'administrador'
-) ON CONFLICT (correo) DO NOTHING;
+INSERT INTO usuarios (nombre, apellido, correo, contrasena_hash, rol) VALUES
+  ('Administrador', 'Sistema', 'admin@desarrolloapp.co', crypt('Admin2024!', gen_salt('bf', 12)), 'administrador'),
+  ('Ana Maria', 'Ardila Galvis', 'Ana.Ardila@desarrolloyestrategia.com', crypt('6M8OD9WEYZ', gen_salt('bf', 12)), 'contador'),
+  ('Cristina', 'Angarita Diaz', 'Cristina.Angarita@desarrolloyestrategia.com', crypt('HAKgu0jpsx', gen_salt('bf', 12)), 'contador'),
+  ('Diana Katherine', 'Rojas Gonzalez', 'Diana.Rojas@desarrolloyestrategia.com', crypt('6sKqWNnjLj', gen_salt('bf', 12)), 'contador'),
+  ('Diego Fernando', 'Franco Tellez', 'Diego.Franco@desarrolloyestrategia.com', crypt('YFjQOghuSk', gen_salt('bf', 12)), 'contador'),
+  ('Helber', 'Aponte Torres', 'Helber.Aponte@desarrolloyestrategia.com', crypt('34hC92IAGU', gen_salt('bf', 12)), 'administrador'),
+  ('Irly Consolacion', 'Cruz Aponte', 'Irly.Cruz@desarrolloyestrategia.com', crypt('o67kktZZpp', gen_salt('bf', 12)), 'contador'),
+  ('Jenny Andrea', 'Benítez Blanco', 'Jenny.Benitez@desarrolloyestrategia.com', crypt('4DBE4mw33F', gen_salt('bf', 12)), 'contador'),
+  ('Katherine', 'Romero Baquero', 'Katherine.Romero@desarrolloyestrategia.com', crypt('q9k8FR37oV', gen_salt('bf', 12)), 'contador'),
+  ('Lorena', 'Benítez Sánchez', 'Lorena.Benitez@desarrolloyestrategia.com', crypt('ZoCk4AmAux', gen_salt('bf', 12)), 'administrador'),
+  ('Maria Paula', 'Peña Hernandez', 'maria.pena@desarrolloyestrategia.com', crypt('iEfEWovGvT', gen_salt('bf', 12)), 'contador'),
+  ('Tatiana', 'Benitez Sanchez', 'Tatiana.Benitez@desarrolloyestrategia.com', crypt('8P6dS4AtFD', gen_salt('bf', 12)), 'contador'),
+  ('Valentina', 'Pulido Ardila', 'Valentina.Pulido@desarrolloyestrategia.com', crypt('lLIN65GHxx', gen_salt('bf', 12)), 'contador'),
+  ('Yaneth', 'Tarazona Peñaranda', 'Yaneth.Tarazona@desarrolloyestrategia.com', crypt('QgPNZWKGYx', gen_salt('bf', 12)), 'contador'),
+  ('Yoandra', 'Rojas Fernandez', 'Yoandra.Rojas@desarrolloyestrategia.com', crypt('nshG9QTwrD', gen_salt('bf', 12)), 'contador')
+ON CONFLICT (correo) DO UPDATE SET 
+  contrasena_hash = EXCLUDED.contrasena_hash,
+  rol = EXCLUDED.rol;
